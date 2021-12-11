@@ -8,6 +8,7 @@ let timerRunning = false;
 const timer = () => setInterval("newtimerFunction()", 1000);
 
 
+// Code to run when timer starts
 const runTimer = () => {
     startButton.innerHTML = "Stop";
     timerRunning = true;
@@ -15,11 +16,13 @@ const runTimer = () => {
     // timer();
 };
 
+// Code to run when timer is stopped
 const stopTimer = () => {
     startButton.innerHTML = "Start";
     timerRunning = false;
     // clearInterval(timer);
 };
+
 
 const timerStartStop = () => {
     timer();
@@ -70,6 +73,7 @@ const newtimerFunction = () => {
     }
 };
 
+// Function to reduce time (manually created)
 const timerFunction = () => {
     while (timerRunning) {
     if (seconds === 0) {
