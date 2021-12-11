@@ -1,7 +1,12 @@
 // Adding event listener to "Start" button
 const startButton = document.getElementById("start-button");
+
+// Boolean to act as a flag for timer on/off
 let timerRunning = false;
+
+// Running the timer function on a setInterval
 const timer = () => setInterval("newtimerFunction()", 1000);
+
 
 const runTimer = () => {
     startButton.innerHTML = "Stop";
@@ -76,15 +81,4 @@ const timerFunction = () => {
     };
 };
 
-// const future = Date.parse("Dec 31, 2025");
-// const now = new Date();
-// const diff = future - now;
-// const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-// const hours = Math.floor(diff / (1000 * 60 * 60));
-// const mins = Math.floor(diff / (1000 * 60));
-// const secs = Math.floor(diff / 1000);
-// const d = days;
-// const h = hours - days * 24;
-// const m = mins - hours * 60;
-// const s = secs - mins * 60;
 
