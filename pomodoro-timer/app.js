@@ -4,8 +4,8 @@ let minutesValue = parseInt(document.querySelector("#minutes").value);
 let secondsValue = parseInt(document.querySelector("#seconds").value);
 let minutesText = document.querySelector("#minutes");
 let secondsText = document.querySelector("#seconds");
-let timerBoolean = false;
-let intervalId;
+let timerBoolean = false; // Flag to determine whether button starts or stops timer functionality
+let intervalId; // Use this to clearInterval when timer is paused
 
 
 // Using setInterval on the runTimer function
@@ -22,7 +22,7 @@ const runTimer = () => {
     };
 };
 
-// Function to reduce time
+// Function to reduce time once timer is started
 const startTimer = () => {    
     if (secondsValue === 0) {
         secondsValue = 59;
@@ -33,115 +33,12 @@ const startTimer = () => {
     timerBoolean = true;
 };
 
-// Function once timer is stopped
+// Function to clear interval once timer is stopped
 const stopTimer = () => {
     clearInterval(intervalId);
     intervalId = null;
     timerBoolean = false;
 };
 
-// When you click the Start button, fires startTimer function
+// When you click the timer button, fire the runTimer function
 timerButton.addEventListener("click", runTimer);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Boolean to act as a flag for timer on/off
-// let timerRunning = false;
-
-// Running the timer function on a setInterval
-// const timer = () => setInterval("newtimerFunction()", 1000);
-
-// Code to run when timer starts
-// const runTimer = () => {
-//     startButton.innerHTML = "Stop";
-//     timerRunning = true;
-//     console.log("Ran runTimer");
-//     // timer();
-// };
-
-// Code to run when timer is stopped
-// const stopTimer = () => {
-//     startButton.innerHTML = "Start";
-//     timerRunning = false;
-//     // clearInterval(timer);
-// };
-
-
-// const timerStartStop = () => {
-//     timer();
-//     if (timerRunning) {
-//         startButton.innerHTML = "Start";
-//         timerRunning = false;
-//         clearInterval(timer);
-//     } else {
-//         startButton.innerHTML = "Stop";
-//         timerRunning = true;
-//     };
-// };
-
-
-// ClickHandler function once "Start" button is clicked
-// const clickHandler = () => {
-//     console.log("You clicked start!");
-    // timerRunning ? stopTimer() : runTimer();
-    // timerStartStop();
-    // setInterval("timerFunction()", 1000);
-    // // if (timerRunning === true) {setInterval("timerFunction()", 1000)};
-    // newtimerFunction();
-// };
-
-
-
-// let minutesValue = document.querySelector("#minutes").value;
-// let secondsValue = document.querySelector("#seconds").value;
-// let minutes = parseInt(document.querySelector("#minutes").value);
-// let seconds = parseInt(document.querySelector("#seconds").value);
-
-// const newtimerFunction = () => {
-//     if (timerRunning === false) {
-//         timer();
-//         startButton.innerHTML = "Stop";
-//         timerRunning = true;
-//         if (seconds === 0) {
-//             seconds = 59;
-//             minutes--;
-//         } else {seconds--};
-//         document.querySelector("#minutes").value = minutes;
-//         document.querySelector("#seconds").value = seconds;
-//     } else {
-//         startButton.innerHTML = "Start";
-//         timerRunning = false;
-//         clearInterval(timer);
-//     }
-// };
-
-// // Function to reduce time (manually created)
-// const timerFunction = () => {
-//     while (timerRunning) {
-//     if (seconds === 0) {
-//         seconds = 59;
-//         minutes--;
-//     } else {seconds--};
-//     document.querySelector("#minutes").value = minutes;
-//     document.querySelector("#seconds").value = seconds;
-//     };
-// };
-
-
