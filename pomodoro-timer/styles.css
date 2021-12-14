@@ -112,3 +112,26 @@ input[type=text]:disabled {
 .settings:hover {
   opacity: 1;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 50%;
+  height: 50%;
+  align-content: center;
+  align-self: center;
+}
+
+.modal-content {
+  position: relative;
+  background-color: blue;
+}
+
+.close-btn {
+  float: right;
+}
+
+.close-btn:hover {
+  color: darkblue;
+}
