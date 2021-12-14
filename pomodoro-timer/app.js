@@ -28,10 +28,14 @@ const runTimer = () => {
 
 // Function to reduce time once timer is started
 const startTimer = () => {
-    if (secondsValue === 0) {
+    if (minutesValue === 0 && secondsValue === 1) {
+        stopTimer();
+        console.log("TIME'S UP!");
+    } else
+        if (secondsValue === 0) {
         secondsValue = 59;
         minutesValue--;
-    } else {secondsValue--;}
+        } else {secondsValue--;}
     minutesText.value = minutesValue;
     // secondsValue = secondsValue < 10 ? "0" + secondsValue : secondsValue;
     secondsText.value = secondsValue < 10 ? "0" + secondsValue : secondsValue;
@@ -44,6 +48,13 @@ const stopTimer = () => {
     intervalId = null;
     timerBoolean = false;
 };
+
+const timerDone = () => {
+    while (timerBoolean) {
+        if (minutesValue === 0 && secondsValue === 1) {
+        console.log("TIME'S UP!");
+    }
+}};
 
 // Function for settings button
 const openSettings = () => {
