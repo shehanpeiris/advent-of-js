@@ -23,13 +23,14 @@ const runTimer = () => {
 };
 
 // Function to reduce time once timer is started
-const startTimer = () => {    
+const startTimer = () => {
     if (secondsValue === 0) {
         secondsValue = 59;
         minutesValue--;
     } else {secondsValue--;}
     minutesText.value = minutesValue;
-    secondsText.value = secondsValue;
+    // secondsValue = secondsValue < 10 ? "0" + secondsValue : secondsValue;
+    secondsText.value = secondsValue < 10 ? "0" + secondsValue : secondsValue;
     timerBoolean = true;
 };
 
